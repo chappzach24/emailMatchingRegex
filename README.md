@@ -2,9 +2,6 @@
 
 The provided regular expression /^([a-z0-9_.-]+)@([\da-z.-]+)\.([a-z.]{2,6})$/ is a powerful tool for validating email addresses according to common standards. Designed to be used in various programming languages and applications, this regex meticulously captures the structure of an email address into its constituent parts: the username, the "@" symbol, the domain name, the dot separator, and the Top-Level Domain (TLD). By employing a combination of character classes, quantifiers, and anchors, this regex ensures that the email address adheres to the expected format, making it an invaluable asset for form validation, data parsing, and other tasks where email address validation is crucial.
 
-The provided regular expression /^([a-z0-9_.-]+)@([\da-z.-]+)\.([a-z.]{2,6})$/ is a powerful tool for validating email addresses according to common standards. Designed to be used in various programming languages and applications, this regex meticulously captures the structure of an email address into its constituent parts: the username, the "@" symbol, the domain name, the dot separator, and the Top-Level Domain (TLD). By employing a combination of character classes, quantifiers, and anchors, this regex ensures that the email address adheres to the expected format, making it an invaluable asset for form validation, data parsing, and other tasks where email address validation is crucial.
-
-
 ## Summary
 
 This regular expression is designed to match email addresses with the following components:
@@ -51,34 +48,57 @@ Quantifiers in regular expressions specify the number of times a particular elem
 ### OR Operator
 
 The OR operator, denoted by the pipe symbol |, provides a way to specify alternative patterns within a regular expression. It allows you to match one pattern or another.
+^I like (dogs|penguins), but not (lions|tigers).$
 
 ### Character Classes
 
 Character classes in regular expressions, denoted by square brackets [ ], allow you to define a set of characters that can match a single character in the input string. They provide a concise way to specify groups of characters, enabling flexible and powerful pattern matching. Predefined character classes like \d for digits, \w for word characters, and \s for whitespace characters offer additional convenience for common matching tasks.
+[a-z]: Matches any lowercase letter from 'a' to 'z'.
 
 ### Flags
 
-Flags in regular expressions are optional modifiers that change how pattern matching is performed. They can adjust aspects such as case sensitivity, matching behavior, and scope within the input text. Common flags include i for case-insensitive matching, g for global matching, and m for multiline matching. These flags offer flexibility and customization options for regex pattern matching.
+Flags in regular expressions are optional modifiers that change how pattern matching is performed. They can adjust aspects such as case sensitivity, matching behavior, and scope within the input text. Common flags include i for case-insensitive matching, g for global matching, and m for multiline matching. These flags offer flexibility and customization options for regex pattern matching. 
+In the regular expression /^([a-z0-9_.-]+)@([\da-z.-]+)\.([a-z.]{2,6})$/, the \d character class is used to match any digit character (equivalent to [0-9]).
+
+- \d would match any single digit, such as 0, 1, 2, ..., 9.
+- \d{3} would match exactly three consecutive digits.
 
 ### Grouping and Capturing
 
 Grouping and capturing in regular expressions, accomplished with parentheses ( ), allow for organizing and capturing parts of a pattern. Grouping enables treating multiple characters or subpatterns as a single unit for operations like quantifiers, while capturing allows extracting specific matched text for further processing.
 
+- ([a-z0-9_.-]+): This is the first capturing group.
+- ([\da-z.-]+): This is the second capturing group.
+
 ### Bracket Expressions
 
-Bracket expressions, also known as character classes, in regular expressions allow you to specify a set of characters from which a single character in the input string can match. They are defined within square brackets [ ]. [a-z]: Matches any lowercase letter from 'a' to 'z'.
+Bracket expressions, also known as character classes, in regular expressions allow you to specify a set of characters from which a single character in the input string can match. They are defined within square brackets [ ]. 
+
+- [a-z]: Matches any lowercase letter from 'a' to 'z'.
 
 ### Greedy and Lazy Match
 
 Greedy and lazy matching in regular expressions control how quantifiers behave. Greedy quantifiers match as much of the input as possible, while lazy quantifiers match as little as possible. Greedy is the default behavior, but appending a ? after a quantifier makes it lazy. This distinction is useful for specifying precise matching and capturing the shortest possible substring that satisfies the pattern.
 
+.*?([a-z0-9_.-]+)@([\da-z.-]+)\.([a-z.]{2,6})
+
+- .*?: This part matches any character (except newline characters) zero or more times, but as few times as possible (lazy quantifier).
+- ([a-z0-9_.-]+): This is the capturing group for the username part of the email address.
+- @: Matches the "@" symbol.
+- ([\da-z.-]+): This is the capturing group for the domain name part of the email address.
+- \.([a-z.]{2,6}): This is the capturing group for the TLD part of the email address.
+
 ### Boundaries
 
-Boundaries in regular expressions are markers that define specific positions within the input text. 
-They include: ^, $, /b, /B
+Boundaries in regular expressions are markers that define specific positions within the input text.
+
+They include:
+- ^: Matches the start of the string.
+- $: Matches the end of the string.
+- \b: Matches a word boundary, indicating the position between a word character (alphanumeric or underscore) and a non-word character.
+- \B: Matches a non-word boundary, indicating the position between two word characters or two non-word characters.
 
 ### Back-references
-
 
 Back-references in regular expressions (\1, \2, etc.) allow you to refer to and reuse previously captured text within the pattern. They enhance regex flexibility by enabling repetition detection and ensuring consistency in matching patterns.
 
