@@ -2,6 +2,9 @@
 
 The provided regular expression /^([a-z0-9_.-]+)@([\da-z.-]+)\.([a-z.]{2,6})$/ is a powerful tool for validating email addresses according to common standards. Designed to be used in various programming languages and applications, this regex meticulously captures the structure of an email address into its constituent parts: the username, the "@" symbol, the domain name, the dot separator, and the Top-Level Domain (TLD). By employing a combination of character classes, quantifiers, and anchors, this regex ensures that the email address adheres to the expected format, making it an invaluable asset for form validation, data parsing, and other tasks where email address validation is crucial.
 
+The provided regular expression /^([a-z0-9_.-]+)@([\da-z.-]+)\.([a-z.]{2,6})$/ is a powerful tool for validating email addresses according to common standards. Designed to be used in various programming languages and applications, this regex meticulously captures the structure of an email address into its constituent parts: the username, the "@" symbol, the domain name, the dot separator, and the Top-Level Domain (TLD). By employing a combination of character classes, quantifiers, and anchors, this regex ensures that the email address adheres to the expected format, making it an invaluable asset for form validation, data parsing, and other tasks where email address validation is crucial.
+
+
 ## Summary
 
 This regular expression is designed to match email addresses with the following components:
@@ -51,20 +54,38 @@ The OR operator, denoted by the pipe symbol |, provides a way to specify alterna
 
 ### Character Classes
 
+Character classes in regular expressions, denoted by square brackets [ ], allow you to define a set of characters that can match a single character in the input string. They provide a concise way to specify groups of characters, enabling flexible and powerful pattern matching. Predefined character classes like \d for digits, \w for word characters, and \s for whitespace characters offer additional convenience for common matching tasks.
+
 ### Flags
+
+Flags in regular expressions are optional modifiers that change how pattern matching is performed. They can adjust aspects such as case sensitivity, matching behavior, and scope within the input text. Common flags include i for case-insensitive matching, g for global matching, and m for multiline matching. These flags offer flexibility and customization options for regex pattern matching.
 
 ### Grouping and Capturing
 
+Grouping and capturing in regular expressions, accomplished with parentheses ( ), allow for organizing and capturing parts of a pattern. Grouping enables treating multiple characters or subpatterns as a single unit for operations like quantifiers, while capturing allows extracting specific matched text for further processing.
+
 ### Bracket Expressions
+
+Bracket expressions, also known as character classes, in regular expressions allow you to specify a set of characters from which a single character in the input string can match. They are defined within square brackets [ ]. [a-z]: Matches any lowercase letter from 'a' to 'z'.
 
 ### Greedy and Lazy Match
 
+Greedy and lazy matching in regular expressions control how quantifiers behave. Greedy quantifiers match as much of the input as possible, while lazy quantifiers match as little as possible. Greedy is the default behavior, but appending a ? after a quantifier makes it lazy. This distinction is useful for specifying precise matching and capturing the shortest possible substring that satisfies the pattern.
+
 ### Boundaries
+
+Boundaries in regular expressions are markers that define specific positions within the input text. 
+They include: ^, $, /b, /B
 
 ### Back-references
 
+
+Back-references in regular expressions (\1, \2, etc.) allow you to refer to and reuse previously captured text within the pattern. They enhance regex flexibility by enabling repetition detection and ensuring consistency in matching patterns.
+
 ### Look-ahead and Look-behind
+
+Look-ahead and look-behind assertions in regular expressions allow you to define conditions for matching text without including the text in the actual match. They are used to specify patterns that must (or must not) be followed by or preceded by certain conditions.
 
 ## Author
 
-A short section about the author with a link to the author's GitHub profile (replace with your information and a link to your profile)
+I am Zachary Chapman and you can find me on github at https://github.com/chappzach24
